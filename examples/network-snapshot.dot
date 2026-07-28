@@ -1,0 +1,21 @@
+graph RailwayNetwork {
+    graph [rankdir=LR, bgcolor="#F6F4EF", pad=0.25, nodesep=0.55, ranksep=0.8]
+    node [shape=box, style="rounded,filled", fillcolor="#E8F3EF", color="#2A6F62",
+          fontname="Helvetica", fontcolor="#173D36", margin="0.18,0.12"]
+    edge [color="#385D55", fontcolor="#385D55", fontname="Helvetica",
+          fontsize=10, penwidth=1.8]
+
+    "Northport" [label="Northport\npop 1,200 · stock 48"]
+    "Stonebridge" [label="Stonebridge\npop 860 · stock 32"]
+    "Eastmere" [label="Eastmere\npop 740 · stock 21"]
+    "Westhaven" [label="Westhaven\npop 980 · stock 37"]
+    "Pinecross" [label="Pinecross\npop 520 · stock 15"]
+    "Southbay" [label="Southbay\npop 1,050 · stock 42"]
+
+    "Northport" -- "Stonebridge" [color="#1B796B:#1B796B", label="dual"]
+    "Stonebridge" -- "Eastmere" [label="single"]
+    "Northport" -- "Westhaven" [style="dashed", color="#1B796B:#1B796B", label="upgrading"]
+    "Westhaven" -- "Pinecross" [style="dashed", color="#9AA9A4", label="building"]
+    "Eastmere" -- "Southbay" [color="#1B796B:#1B796B", label="dual"]
+    "Westhaven" -- "Southbay" [label="single"]
+}

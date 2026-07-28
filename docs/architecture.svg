@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="720" viewBox="0 0 1440 720" role="img" aria-labelledby="title description">
+  <title id="title">Railway Network Simulator architecture</title>
+  <desc id="description">Environmental adapters flow through simulation and network boundaries into a railway domain, with observer-driven console and Graphviz presentation.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto">
+      <path d="M0 0L11 5.5L0 11Z" fill="#2A6F62"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="11" flood-color="#173D36" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+
+  <rect width="1440" height="720" rx="30" fill="#F6F4EF"/>
+  <text x="72" y="66" fill="#173D36" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="30" font-weight="800">Architecture with explicit environmental boundaries</text>
+  <text x="72" y="98" fill="#667A74" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="17">A testable day pipeline surrounds a domain that never reads input or writes output.</text>
+
+  <g font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" filter="url(#shadow)">
+    <g transform="translate(72 160)">
+      <rect width="270" height="420" rx="26" fill="#FFFFFF" stroke="#D6DEDA"/>
+      <rect width="270" height="72" rx="26" fill="#E5EEE9"/>
+      <path d="M0 72H270" stroke="#D6DEDA"/>
+      <text x="28" y="35" fill="#2A6F62" font-size="13" font-weight="800" letter-spacing="1.5">ENVIRONMENT</text>
+      <text x="28" y="59" fill="#173D36" font-size="20" font-weight="800">Adapters</text>
+
+      <rect x="24" y="100" width="222" height="72" rx="16" fill="#F7F3EB"/>
+      <circle cx="50" cy="136" r="12" fill="#D97B59"/>
+      <text x="72" y="132" fill="#173D36" font-size="15" font-weight="700">Event source</text>
+      <text x="72" y="152" fill="#667A74" font-size="13">live or deterministic</text>
+
+      <rect x="24" y="190" width="222" height="72" rx="16" fill="#F7F3EB"/>
+      <circle cx="50" cy="226" r="12" fill="#C69A43"/>
+      <text x="72" y="222" fill="#173D36" font-size="15" font-weight="700">Clock + stop signal</text>
+      <text x="72" y="242" fill="#667A74" font-size="13">injectable pacing</text>
+
+      <rect x="24" y="280" width="222" height="96" rx="16" fill="#F7F3EB"/>
+      <circle cx="50" cy="316" r="12" fill="#2A6F62"/>
+      <text x="72" y="312" fill="#173D36" font-size="15" font-weight="700">Composition root</text>
+      <text x="72" y="332" fill="#667A74" font-size="13">wires concrete adapters</text>
+      <text x="72" y="352" fill="#667A74" font-size="13">to stable contracts</text>
+    </g>
+
+    <g transform="translate(438 160)">
+      <rect width="340" height="185" rx="26" fill="#173D36"/>
+      <text x="28" y="38" fill="#D7E8E1" font-size="13" font-weight="800" letter-spacing="1.5">DAY ORCHESTRATION</text>
+      <text x="28" y="69" fill="#FFFFFF" font-size="22" font-weight="800">Simulation</text>
+      <rect x="26" y="96" width="288" height="58" rx="15" fill="#315B53"/>
+      <text x="42" y="120" fill="#FFFFFF" font-size="14" font-weight="700">events → production → freight</text>
+      <text x="42" y="141" fill="#BFD0CB" font-size="13">state advance → report → graph</text>
+    </g>
+
+    <g transform="translate(438 395)">
+      <rect width="340" height="185" rx="26" fill="#FFFFFF" stroke="#D6DEDA"/>
+      <text x="28" y="38" fill="#8A3F2D" font-size="13" font-weight="800" letter-spacing="1.5">VALIDATED FACADE</text>
+      <text x="28" y="69" fill="#173D36" font-size="22" font-weight="800">NetworkManager</text>
+      <rect x="26" y="96" width="138" height="58" rx="15" fill="#F7E3D9"/>
+      <text x="95" y="121" fill="#8A3F2D" font-size="14" font-weight="700" text-anchor="middle">Registry</text>
+      <text x="95" y="141" fill="#8A3F2D" font-size="12" text-anchor="middle">identity + integrity</text>
+      <rect x="176" y="96" width="138" height="58" rx="15" fill="#E5EEE9"/>
+      <text x="245" y="121" fill="#2A6F62" font-size="14" font-weight="700" text-anchor="middle">Factories</text>
+      <text x="245" y="141" fill="#2A6F62" font-size="12" text-anchor="middle">typed creation</text>
+    </g>
+
+    <g transform="translate(874 160)">
+      <rect width="494" height="420" rx="26" fill="#FFFFFF" stroke="#D6DEDA"/>
+      <rect width="494" height="72" rx="26" fill="#F7E3D9"/>
+      <path d="M0 72H494" stroke="#E8C8B8"/>
+      <text x="28" y="35" fill="#8A3F2D" font-size="13" font-weight="800" letter-spacing="1.5">DOMAIN</text>
+      <text x="28" y="59" fill="#173D36" font-size="20" font-weight="800">Infrastructure model</text>
+
+      <g transform="translate(24 102)">
+        <rect width="212" height="112" rx="18" fill="#F7F3EB"/>
+        <text x="22" y="30" fill="#173D36" font-size="16" font-weight="800">Entities</text>
+        <text x="22" y="57" fill="#667A74" font-size="14">Town · Warehouse</text>
+        <text x="22" y="80" fill="#667A74" font-size="14">Railway · stock</text>
+      </g>
+
+      <g transform="translate(258 102)">
+        <rect width="212" height="112" rx="18" fill="#E5EEE9"/>
+        <text x="22" y="30" fill="#173D36" font-size="16" font-weight="800">State policy</text>
+        <text x="22" y="57" fill="#667A74" font-size="14">capacity · timing</text>
+        <text x="22" y="80" fill="#667A74" font-size="14">eligibility · transition</text>
+      </g>
+
+      <g transform="translate(24 238)">
+        <rect width="446" height="136" rx="18" fill="#173D36"/>
+        <text x="22" y="34" fill="#FFFFFF" font-size="16" font-weight="800">Railway lifecycle</text>
+        <g transform="translate(22 62)" fill="#D7E8E1" font-size="12" font-weight="700">
+          <rect width="88" height="35" rx="17.5" fill="#315B53"/>
+          <text x="44" y="23" text-anchor="middle">building</text>
+          <text x="108" y="23">→</text>
+          <rect x="124" width="88" height="35" rx="17.5" fill="#315B53"/>
+          <text x="168" y="23" text-anchor="middle">single</text>
+          <text x="232" y="23">→</text>
+          <rect x="248" width="92" height="35" rx="17.5" fill="#8A3F2D"/>
+          <text x="294" y="23" fill="#FFFFFF" text-anchor="middle">upgrading</text>
+          <text x="360" y="23">→</text>
+          <rect x="376" width="48" height="35" rx="17.5" fill="#C69A43"/>
+          <text x="400" y="23" fill="#173D36" text-anchor="middle">dual</text>
+        </g>
+      </g>
+    </g>
+
+    <g transform="translate(438 624)">
+      <rect width="930" height="58" rx="20" fill="#E5EEE9"/>
+      <text x="24" y="25" fill="#2A6F62" font-size="12" font-weight="800" letter-spacing="1.4">OBSERVER-DRIVEN PRESENTATION</text>
+      <text x="24" y="45" fill="#173D36" font-size="15" font-weight="700">NetworkReporter · daily console summary · escaped UTF-8 Graphviz snapshot</text>
+    </g>
+  </g>
+
+  <g fill="none" stroke="#2A6F62" stroke-width="3.5" marker-end="url(#arrow)">
+    <path d="M346 252H423"/>
+    <path d="M608 350V379"/>
+    <path d="M794 487H858"/>
+    <path d="M1040 596V614"/>
+  </g>
+  <path d="M874 329H810V253H794" fill="none" stroke="#2A6F62" stroke-width="3.5" marker-end="url(#arrow)"/>
+</svg>
