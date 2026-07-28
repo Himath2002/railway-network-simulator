@@ -12,7 +12,7 @@
   <a href="https://github.com/Himath2002/railway-network-simulator/actions/workflows/ci.yml"><img src="https://github.com/Himath2002/railway-network-simulator/actions/workflows/ci.yml/badge.svg" alt="CI status"></a>
   <a href="https://github.com/Himath2002/railway-network-simulator/releases"><img src="https://img.shields.io/github/v/release/Himath2002/railway-network-simulator?display_name=tag&sort=semver&style=flat-square" alt="Latest release"></a>
   <img src="https://img.shields.io/badge/Java-21-8A3F2D?style=flat-square&logo=openjdk&logoColor=white" alt="Java 21">
-  <img src="https://img.shields.io/badge/Gradle-8.9-02303A?style=flat-square&logo=gradle&logoColor=white" alt="Gradle 8.9">
+  <img src="https://img.shields.io/badge/Gradle-9.6.1-02303A?style=flat-square&logo=gradle&logoColor=white" alt="Gradle 9.6.1">
 </p>
 
 ## The simulation
