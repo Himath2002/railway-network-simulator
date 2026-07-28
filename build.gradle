@@ -1,0 +1,57 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'pmd'
+}
+
+group = 'io.github.himathahangama'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.13.4')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+application {
+    mainClass = 'io.github.himathahangama.railnet.application.RailwayNetworkApplication'
+}
+
+tasks.named('run') {
+    standardInput = System.in
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.compilerArgs.addAll(['-Xlint:all', '-Werror'])
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+    testLogging {
+        events 'passed', 'skipped', 'failed'
+        exceptionFormat = 'full'
+    }
+    reports {
+        html.required = true
+        junitXml.required = true
+    }
+}
+
+pmd {
+    consoleOutput = true
+    toolVersion = '7.15.0'
+    rulesMinimumPriority = 5
+    ruleSets = []
+    ruleSetFiles = files('config/pmd/ruleset.xml')
+}
