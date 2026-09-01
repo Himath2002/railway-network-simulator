@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/hero.svg" alt="Railway Network Simulator — an event-driven rail network moving through construction, operation, and duplication" width="100%">
+  <img src="docs/hero.svg" alt="Railway Network Simulator - an event-driven rail network moving through construction, operation, and duplication" width="100%">
 </p>
 
 <h1 align="center">Railway Network Simulator</h1>
@@ -47,7 +47,7 @@ The design keeps infrastructure policy inside the domain rather than spreading l
 ### Requirements
 
 - JDK 21
-- No global Gradle installation—the repository includes the Gradle Wrapper
+- No global Gradle installation-the repository includes the Gradle Wrapper
 
 ### Start the simulator
 
